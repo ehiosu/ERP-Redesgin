@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.auth-bg{
+    background-color: #1945B7;
+    background-image: url('/bg.png');
+    background-position: center;
+    background-size:   cover;
+    background-repeat: no-repeat;
+    
+}
+
+.apexcharts-tooltip{
+    width: 12rem;
+}
