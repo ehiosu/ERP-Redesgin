@@ -9,26 +9,26 @@ export const Dashboard = () => {
   return (
     <section    className='flex-1   bg-[#F3FBFF]    rounded-r-lg   overflow-y-auto'>
             <div className="grid    grid-cols-5 h-full">
-                <div className="col-span-3   p-4">
-                    <div className="w-full  h-auto    flex    justify-end items-center      gap-2">
+                <div className="col-span-3    px-8   py-4    ">
+                    <div className="lg:max-w-[40rem] h-auto    flex    justify-end items-center      gap-2  ">
                         <div className="flex   ">
-                            <div className="w-12 h-12    rounded-l-full    bg-white   border   border-gray-400/40  border-r-0    grid    items-center   justify-center   p-2">
+                            <div className="w-12 h-12    rounded-l-full    bg-white   border   border-gray-400/40  border-r-0    grid  grid-cols-1  place-items-center  p-2">
                                 <AiOutlineSearch/>
                             </div>
-                            <input type="text" name="" id="" className='h-12    w-60    bg-white    border  border-gray-400/40  rounded-r-full    border-l-0    outline-none    p-2'    placeholder='Search'/>
+                            <input type="text" name="" id="" className='h-12    w-60    bg-white    border  border-gray-400/40  rounded-r-full    border-l-0    outline-none    p-2 flex  items-center'    placeholder='Search'/>
                         </div>
                         <span className="w-12    h-12 bg-white    rounded-full  relative    flex    items-center    justify-center  hover:scale-110 transition-all">
-                            <span className="w-4 absolute   bg-red-400  rounded-full    top-[15%]   h-4 text-[8px] right-[5%] flex    items-center    justify-center  text-white">
+                            <span className="w-4 absolute   bg-[#1945B7]  rounded-full    top-[15%]   h-4 text-[8px] right-[5%] flex    items-center    justify-center  text-white">
                                 4
                             </span>
                             <AiOutlineBell  className='text-xl'/>
                         </span>
                     </div>
                     <p className="text-3xl  font-semibold    p-2   h-auto   my-2">
-                        Hello,Umar!
+                        Hello,Olatunde!
                     </p>
 
-                    <div className="w-full  h-[40vh]    bg-[#1945B7]    rounded-xl  relative">
+                    <div className="lg:max-w-[40rem]  h-[30vh]    bg-[#1945B7]    rounded-2xl  relative   shadow-md">
                         <p className="absolute  top-[10px]   left-[15px] flex    flex-col   text-white">
                             <span className="font-semibold  text-white  text-xl">
                                 Activity
@@ -38,15 +38,15 @@ export const Dashboard = () => {
                         <Chart/>
                     </div>
 
-                    <div className="w-full  grid    grid-cols-2 h-[30vh]        my-4">
+                    <div className="max-w-[40rem]  grid    grid-cols-2 h-[30vh]        my-4">
                         <section className="col-span-1  p-2">
                             {[{icon:<AiOutlineProject   className='object-contain   text-3xl'/>,text:'Total Projects',data:'100',color:'bg-[#F3FBFF] '},{icon:<BsPeople   className='object-contain   text-3xl'/>,text:'Total Clients',data:'50',color:'bg-[#FFA36F]   bg-opacity-40 '},{icon:<CiTimer   className='object-contain   text-3xl'/>,text:'Ongoing Projects',data:'40',color:'bg-[#6FF6FF]  bg-opacity-10'},{icon:<BsClipboardCheck   className='object-contain   text-3xl'/>,text:'Projects Completed',data:'70',color:'bg-[#DB95F0]   bg-opacity-30'}].map((metric)=>{
                                 return  <MetricSection key={metric.text}   text={metric.text}   icon={metric.icon}  data={metric.data} color={metric.color}/>
                             })}
                         </section>
                         <section className="col-span-1  p-2 overflow-y-auto scroll-smooth">
-                        <div className='w-full   h-[4.8rem]    my-2    bg-white rounded-md   flex    flex-col    justify-start   items-start    p-4'    >
-            <p className="text-2xl   font-semibold">Latest Updates</p>
+                        <div className='w-full   h-[4.5rem]    my-2    bg-white rounded-md   flex    flex-col    justify-start   items-start    p-4'    >
+            <p className="text-2xl   font-semibold">Latest Progress</p>
             <p className="text-xs"><span className="text-blue-600   font-semibold">10</span> june - <span className="text-blue-600  font-semibold">15</span> June</p>
 
         </div>
@@ -57,7 +57,7 @@ export const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="col-span-2  w-full">
+                <div className="col-span-2  w-full  px-3">
                     <RightPanel/>
                 </div>
 
@@ -69,7 +69,7 @@ export const Dashboard = () => {
 const  Chart=()=>{
     const   series =[{
         name: 'Average Hours Spent',
-        data: [31, 40, 28, 51, 42]
+        data: [12, 62, 12, 61, 98]
       }]
       const options= {
         chart: {
@@ -138,8 +138,8 @@ const  Chart=()=>{
     
     }
     return(
-        <div className="w-full  h-full">
-            <ReactApexChart type='area' height={'100%'} series={series} options={options}/>
+        <div className="w-full  h-full ">
+            <ReactApexChart type='area' height={'100%'}  series={series} options={options}/>
         </div>
     )
 }
@@ -155,10 +155,10 @@ const MetricSection=({icon,text,data,color})=>{
                                 </div>
                                 <div className="flex-1   h-full flex    justify-between items-center">
             <div className="flex-col">
-                <p className="text-[14px]   text-neutral-400">
+                <p className="text-[12px]   text-neutral-400">
                     {text}
                 </p>
-                <p className="text-xl  font-semibold">
+                <p className="text-[17px]  font-semibold">
                     {data}
                 </p>
             </div>
@@ -169,15 +169,15 @@ const MetricSection=({icon,text,data,color})=>{
 
 const  ScheduleComponent=({text,project,time})=>{
     return(
-        <button className='w-full   h-[4.2rem]    my-2    bg-white rounded-md   flex    flex-row    justify-between   items-start    p-2    hover:bg-[#7CCAF6]/40   '    >
+        <button className='w-full   h-[4.2rem]    my-2    bg-white rounded-md   flex    flex-row    justify-between   items-start    p-2    hover:bg-[#7CCAF6]/40       shadow-md'    >
             <div className="flex    flex-col    justify-start   items-start">
-            <p className="text-xl   font-semibold">{text}</p>
-            <span className="text-[14px]    text-blue-600">
+            <p className="text-[18px]   font-semibold">{text}</p>
+            <span className="text-[12px]    text-blue-600">
                 {project}
             </span>
             </div>
             <div className="flex    items-center    justify-center  h-full">
-                <p className="text-[14px]   font-semibold">
+                <p className="text-[12px]   font-semibold">
                     {time}
                 </p>
             </div>
@@ -189,15 +189,15 @@ const  ScheduleComponent=({text,project,time})=>{
 const  RightPanel=()=>{
     return(
         <section    className='w-full   h-full  p-2   overflow-hidden'>
-            <p className="text-2xl   font-semibold">
+            <p className="text-[20px]   font-semibold">
                 Schedule
             </p>
             <MiniCalendar/>
 
-            <p className="text-2xl  font-semibold   flex    justify-between items-center">
+            <p className="text-[20px]  font-semibold   flex    justify-between items-center">
                 Meetings    <span className="text-[14px]    font-semibold   text-[#1B49C1]  hover:underline underline-offset-4  hover:cursor-pointer">See All</span>
             </p>
-            <div className="h-[46.8vh]  overflow-y-auto ">
+            <div className="h-[40vh]  overflow-y-auto     ">
                 {
                     [{text:'Sprint Daily Meeting',time:'09:00am - 09:30am'},{text:'Certum Update',time:'09:45am - 10:30am'},{text:'Wordpress Training',time:'11:00am - 12:30am'},{text:'Technical Meeting',time:'13:00pm - 14:30pm'},{text:'Certum Demo',time:'15:00pm - 16:30pm'},{text:'Meeting With Microsoft',time:'18:00pm - 20:30pm'} ].map((data,index)=>{
                         return  <MeetingComponent text={data.text}  time={data.time}    index={index}   key={data.text+index.toString()}  />
@@ -218,11 +218,11 @@ const  MeetingComponent=({text,time,index})=>{
         3:'bg-[#EC7474]/40'
     }
     return(
-        <button className={`w-[75%]  mx-auto   h-[4.2rem]    my-3 ${bg[index%4]}  ${index==1&&'border   border-gray-400'}  rounded-md   flex    flex-col    justify-center   items-center    p-2     `}    >
+        <button className={`w-[70%]  mx-auto   h-[4.2rem]    my-3 ${bg[index%4]}  ${index==1&&'border   border-gray-400'}  rounded-md   flex    flex-col    justify-center   items-center    p-2     shadow-md`  }    >
           
-            <p className="text-xl   font-semibold">{text}</p>
+            <p className="text-[17px]   font-semibold">{text}</p>
            
-            <div className="flex">
+            <div className="flex    text-[13px]">
                 {time}
             </div>
             

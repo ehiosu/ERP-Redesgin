@@ -12,20 +12,20 @@ export const Auth = () => {
 
   return (
     <main   className='w-full   h-screen    overflow-hidden relative    bg-white'>
-        <div className="w-full  h-full  flex  sm:flex-col lg:flex-row overflow-hidden ">
+        <div className="w-full  h-full  flex  flex-col md:flex-row overflow-hidden ">
             <Signup login={login} setIsLogin={setIsLogin}/>
             {/* sign-up-above */}
             <Login  login={login} setIsLogin={setIsLogin}/>
-<div    className={`w-1/2  sm:w-full sm:h-[25vh]  h-full  bg-[#1945B7] absolute  overflow-hidden    top-0  ${login?'left-0 sm:top-0 sm:rounded-b-lg  ':'left-[50%] sm:left-0 sm:top-[75vh]  sm:rounded-t-lg'}     transition-all ease-in-out  duration-1000  `  }>
+<div    className={`md:w-1/2  w-full h-[25vh]  md:h-full  bg-[#1945B7] absolute  overflow-hidden    top-0  ${login?'left-0 md:top-auto top-0  md:rounded-b-none rounded-b-lg  ':'md:left-[50%] md:top-auto  left-0 top-[75vh] md:rounded-t-none  rounded-t-lg'}     transition-all ease-in-out  duration-1000  `  }>
 <div className="w-full  h-full ">
 <img src={left} className=' h-full    object-cover  absolute  left-0  ' alt="" /> 
 <img src={right} className=' h-full   absolute right-0  object-cover' alt="" /> 
-<div className="flex-col  flex  h-full  w-[90%] mx-auto     justify-center  text-white    text-start  p-4 gap-2 sm:gap-0">
-<p className="text-6xl sm:text-lg">
+<div className="flex-col  flex  h-full  w-[90%] mx-auto     justify-center  text-white    text-start  p-4 md:gap-2 gap-0">
+<p className="md:text-6xl text-lg">
 Designed for Amazing Employees
 </p>
-<p  className='text-3xl sm:text-[14px] text-white/80'>Accelerate your business with Circle ERP</p>
-<p className="text-lg text-white/60 sm:text-xs">
+<p  className='md:text-3xl text-[14px] text-white/80'>Accelerate your business with Circle ERP</p>
+<p className="md:text-lg text-white/60 text-xs">
 Streamline operations, boost productivity and gain 
 valuable insights with this powerful, intuitive solution! 
 </p>
@@ -42,14 +42,14 @@ valuable insights with this powerful, intuitive solution!
 const Login=({login,setIsLogin})=>{
   const Nav=useNavigate()
   return(
-    <div className={`w-1/2  transition-all sm:w-full ${login?' sm:flex-grow-1':' sm:h-[25vh] '} lg:h-full  flex items-center sm:justify-start justify-center  sm:p-2 p-4  overflow-hidden`  }>
-    <div className={`w-full h-full    bg-white   ${login?'lg:translate-x-0  sm:translate-y-0 opacity-100 delay-500 ':'opacity-0 -z-10 lg:-translate-x-[200%]  sm:translate-x-0 sm:translate-y-[-400%] delay-500 '} transition-all p-4   rounded-lg  flex  flex-col  gap-2  sm:justify-start    sm:p-4 `}>
+    <div className={`md:w-1/2  transition-all w-full ${login?'md:flex-grow-0  flex-grow-1':'md:h-auto h-[25vh] '} md:h-full  flex items-center justify-start md:justify-center  p-2 md:p-4  overflow-hidden`  }>
+    <div className={`w-full h-full    bg-white   ${login?'md:translate-x-0  md:translate-y-0  translate-y-0 opacity-100 delay-500 ':'opacity-0 -z-10 md:-translate-x-[200%] md:translate-y-0 sm:translate-x-0 translate-y-[-400%] delay-500 '} transition-all p-4   rounded-lg  flex  flex-col  gap-2  sm:justify-start    sm:p-4 `}>
       <div className="w-full  h-auto  flex  justify-end items-center  ">
         <img src={logo} alt=""  className='w-40 object-contain '/>
 
       </div>
-      <div className="flex-1   flex  flex-col      items-center sm:items-start ">
-       <div className="w-[50%] sm:w-full h-auto  flex  flex-col  p-2 mt-20 sm:mt-0">
+      <div className="flex-1   flex  flex-col        md:items-center items-start ">
+       <div className="md:w-[50%] :w-full h-auto  flex  flex-col  p-2 md:mt-20 mt-0">
        <p className="text-2xl  font-semibold"> Welcome Back!</p>
         <p className="text-[12px] text-neutral-400  my-2">
           Enter your detais to sign back into your account
@@ -66,7 +66,7 @@ const Login=({login,setIsLogin})=>{
         <p className="w-full  text-right  text-[12px] mt-2  text-blue-700">
           Forgot Password?
         </p>
-        <button className="w-full text-white  font-semibold my-4  rounded-xl  bg-blue-700 p-1 sm:my-4   hover:outline-2 hover:outline hover:outline-blue-400  hover:outline-offset-2  transition-all" onClick={()=>{Nav('/Home')}}>
+        <button className="w-full text-white  font-semibold my-4  rounded-xl  bg-blue-700 p-1 hover:outline-2 hover:outline hover:outline-blue-400  hover:outline-offset-2  transition-all" onClick={()=>{Nav('/Home')}}>
           Sign In
         </button>
 
@@ -83,16 +83,16 @@ const Login=({login,setIsLogin})=>{
 
 const Signup=({login,setIsLogin})=>{
   return(
-    <div className={`w-1/2    sm:w-full ${login?'sm:h-[25vh]':'flex-grow-1'}  h-full  flex items-center sm:justify-start justify-center  sm:p-0 p-4` }>
+    <div className={`md:w-1/2    w-full ${login?'h-[25vh]':'flex-grow-1'}  md:h-full  flex items-center justify-start md:justify-center  p-0 md:p-4` }>
             <div className={`w-full h-full    bg-white ${login?'translate-x-[200%]  opacity-0':'  opacity-100 translate-x-0  delay-500 '}  transition-all  p-3`}>
             <div className="w-full  h-auto  flex  justify-start items-center  ">
         <img src={logo} alt=""  className='w-40 object-contain '/>
 
       </div>
-      <div className="flex-1   flex  flex-col      items-center sm:items-start ">
-       <div className="w-[50%] sm:w-full h-auto  flex  flex-col  p-2 mt-20 sm:mt-0">
-       <p className="text-2xl sm:text-xl  sm:mt-3 font-semibold"> Hi There!</p>
-        <p className="text-[12px] text-neutral-400  my-2  sm:my-1">
+      <div className="flex-1   flex  flex-col      md:items-center items-start ">
+       <div className="md:w-[50%] w-full h-auto  flex  flex-col  p-2 md:mt-20 mt-0">
+       <p className="md:text-2xl  md:mt-0 text-xl  mt-3 font-semibold"> Hi There!</p>
+        <p className="text-[12px] text-neutral-400  md:my-2  my-1">
           Enter your detais to create a new account
         </p>
         <div class="relative">
@@ -113,7 +113,7 @@ const Signup=({login,setIsLogin})=>{
 </div>
         
        
-        <button className="w-full text-white  font-semibold my-4  rounded-md  bg-blue-700 p-1 sm:my-4 ">
+        <button className="w-full text-white  font-semibold my-4  rounded-md  bg-blue-700 p-1  ">
           Sign Up
         </button>
 

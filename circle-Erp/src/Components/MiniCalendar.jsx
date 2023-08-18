@@ -10,7 +10,7 @@ export  const MiniCalendar = () => {
   return (
     <div  className="w-auto mx-auto flex    justify-center   h-80 my-2">
       
-       <div className="w-auto h-auto  p-4 rounded-md bg-white">
+       <div className="w-[70%]   p-4 rounded-md bg-white">
        <Calendar
         
         className={''}
