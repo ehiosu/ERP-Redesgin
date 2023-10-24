@@ -14,7 +14,7 @@ export default {
         },
         marquee2: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-82.5%)' },
+          '100%': { transform: 'translateX(-126%)' },
         },
         marquee3: {
           '0%': { transform: 'translateX(0%)' },
@@ -24,13 +24,18 @@ export default {
           '0%':{opacity:'0'},
           '50%':{opacity:'0'},
           '100%':{opacity:'100'},
+        },
+        transform:{
+          '0%':{transform:'translateX(-300px)'},
+          '100%':{transform:'translateX(0)'}
         }
       },
       animation:{
         'marquee-infinite' : 'marquee 25s linear infinite',
-        'sm-marquee-infinite' : 'marquee2 25s linear infinite',
+        'sm-marquee-infinite' : 'marquee2 10s linear infinite',
         'md-marquee-infinite' : 'marquee3 25s linear infinite',
-        'opacity':'opacity 1s linear   '
+        'opacity':'opacity 1s linear   ',
+        'transform':'transform 0.3s linear '
 
 
       }

@@ -12,7 +12,7 @@ export const Sidebar = () => {
     }
 
   return (
-    <section    className={`${isOpen?'w-60  text-opacity-100':'w-12   text-opacity-0'} h-full  00    rounded-l-lg   transition-all   duration-700    p-4 flex    flex-col    border-r-2    border-r-gray-400/40`    }>
+    <section    className={`${isOpen?'w-60  text-opacity-100':'w-12   text-opacity-0'} h-full  00    rounded-l-lg md:visible   hidden   transition-all   duration-700    p-4 md:flex    flex-col    border-r-2    border-r-gray-400/40`    }>
         <div className={`flex  ${isOpen?'justify-end':'justify-center'} items-center   ` }>
                 <CiMenuBurger   className='hover:scale-125  hover:font-extrabold hover:drop-shadow-md    transition-all'    onClick={()=>{setIsOpen((open)=>!open)}}/>
         </div>
@@ -27,11 +27,11 @@ export const Sidebar = () => {
                 </span>
             </button>
 
-            <div className="flex-1  flex-col   w-full    items-start mt-10">
+            <div className="flex-1  flex-col   w-full    items-start mt-10 ">
             {   isOpen&&
                 sideData.map((datum,index)=>{
                     
-                    return  <div className={`w-full  h-8    transition-all      ${window.location.pathname==datum.to?'bg-[#1B49C1] text-white  rounded-2xl font-bold':'hover:bg-[#1B49C1]/40 hover:border-l-4 hover:border-l-[#1B49C1] hover:cursor-pointer hover:text-white    hover:rounded-md'}`} onClick={()=>{Nav(datum.to)}}   key={index+datum.to} >
+                    return  <div className={`w-full  h-8    transition-all  ${datum.to==='/Home'?'':'  text-neutral-500'}      ${window.location.pathname==datum.to?'bg-[#1B49C1] text-white  rounded-2xl font-bold':'hover:bg-[#1B49C1]/40 hover:border-l-4 hover:border-l-[#1B49C1] hover:cursor-pointer hover:text-white    hover:rounded-md'}  my-1`} onClick={()=>{Nav(datum.to==='/Home'?datum.to:'/Home')}}   key={index+datum.to} >
                            <div className="h-full   w-[60%] flex    items-center  gap-4 justify-start  text-[14px]  font-light  mx-auto">
                            {datum.icon}
                             <p className="   ">

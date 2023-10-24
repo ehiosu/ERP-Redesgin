@@ -9,7 +9,7 @@ export const Dashboard = () => {
   return (
     <section    className='flex-1   bg-[#F3FBFF]    rounded-r-lg   overflow-y-auto'>
             <div className="grid    grid-cols-5 h-full">
-                <div className="col-span-3    px-8   py-4    ">
+                <div className="lg:col-span-3    lg:px-8   py-4   col-span-5 ">
                     <div className="lg:max-w-[40rem] h-auto    flex    justify-end items-center      gap-2  ">
                         <div className="flex   ">
                             <div className="w-12 h-12    rounded-l-full    bg-white   border   border-gray-400/40  border-r-0    grid  grid-cols-1  place-items-center  p-2">
@@ -38,13 +38,13 @@ export const Dashboard = () => {
                         <Chart/>
                     </div>
 
-                    <div className="max-w-[40rem]  grid    grid-cols-2 h-[30vh]        my-4">
-                        <section className="col-span-1  p-2">
+                    <div className="max-w-[40rem]  grid    lg:grid-cols-2 lg:h-[30vh]   grid-cols-1    my-4 md:grid-cols-2">
+                        <section className="col-span-1  p-2 ">
                             {[{icon:<AiOutlineProject   className='object-contain   text-3xl'/>,text:'Total Projects',data:'100',color:'bg-[#F3FBFF] '},{icon:<BsPeople   className='object-contain   text-3xl'/>,text:'Total Clients',data:'50',color:'bg-[#FFA36F]   bg-opacity-40 '},{icon:<CiTimer   className='object-contain   text-3xl'/>,text:'Ongoing Projects',data:'40',color:'bg-[#6FF6FF]  bg-opacity-10'},{icon:<BsClipboardCheck   className='object-contain   text-3xl'/>,text:'Projects Completed',data:'70',color:'bg-[#DB95F0]   bg-opacity-30'}].map((metric)=>{
                                 return  <MetricSection key={metric.text}   text={metric.text}   icon={metric.icon}  data={metric.data} color={metric.color}/>
                             })}
                         </section>
-                        <section className="col-span-1  p-2 overflow-y-auto scroll-smooth">
+                        <section className="lg:col-span-1  p-2 overflow-y-auto scroll-smooth   ">
                         <div className='w-full   h-[4.5rem]    my-2    bg-white rounded-md   flex    flex-col    justify-start   items-start    p-4'    >
             <p className="text-2xl   font-semibold">Latest Progress</p>
             <p className="text-xs"><span className="text-blue-600   font-semibold">10</span> june - <span className="text-blue-600  font-semibold">15</span> June</p>
@@ -57,7 +57,7 @@ export const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="col-span-2  w-full  px-3">
+                <div className="lg:col-span-2  w-full  px-3 col-span-5">
                     <RightPanel/>
                 </div>
 
@@ -138,7 +138,7 @@ const  Chart=()=>{
     
     }
     return(
-        <div className="w-full  h-full ">
+        <div className="w-full  h-full md:p-0  p-4 ">
             <ReactApexChart type='area' height={'100%'}  series={series} options={options}/>
         </div>
     )

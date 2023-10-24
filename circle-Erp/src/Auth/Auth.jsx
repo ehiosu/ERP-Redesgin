@@ -42,14 +42,14 @@ valuable insights with this powerful, intuitive solution!
 const Login=({login,setIsLogin})=>{
   const Nav=useNavigate()
   return(
-    <div className={`md:w-1/2  transition-all w-full ${login?'md:flex-grow-0  flex-grow-1':'md:h-auto h-[25vh] '} md:h-full  flex items-center justify-start md:justify-center  p-2 md:p-4  overflow-hidden`  }>
-    <div className={`w-full h-full    bg-white   ${login?'md:translate-x-0  md:translate-y-0  translate-y-0 opacity-100 delay-500 ':'opacity-0 -z-10 md:-translate-x-[200%] md:translate-y-0 sm:translate-x-0 translate-y-[-400%] delay-500 '} transition-all p-4   rounded-lg  flex  flex-col  gap-2  sm:justify-start    sm:p-4 `}>
+    <div className={`md:w-1/2   transition-all w-full ${login?'md:flex-grow-0  flex-grow-1':'md:h-auto h-[25vh] '} md:h-full  flex items-center justify-start md:justify-center  p-2 md:p-4  overflow-hidden`  }>
+    <div className={`w-full h-full    bg-white   ${login?'md:translate-x-0  md:translate-y-0  translate-y-0 opacity-100 delay-500 ':'opacity-0 -z-10 md:-translate-x-[200%] md:translate-y-0 sm:translate-x-0 translate-y-[-400%] delay-500 '} transition-all md:p-4  p-2 rounded-lg  flex  flex-col  gap-2      `}>
       <div className="w-full  h-auto  flex  justify-end items-center  ">
         <img src={logo} alt=""  className='w-40 object-contain '/>
 
       </div>
-      <div className="flex-1   flex  flex-col        md:items-center items-start ">
-       <div className="md:w-[50%] :w-full h-auto  flex  flex-col  p-2 md:mt-20 mt-0">
+      <div className="flex-1   flex  flex-col       items-center ">
+       <div className="md:w-[50%] w-full  gap-2 h-auto  flex  flex-col  p-2 md:mt-20 mt-0">
        <p className="text-2xl  font-semibold"> Welcome Back!</p>
         <p className="text-[12px] text-neutral-400  my-2">
           Enter your detais to sign back into your account
